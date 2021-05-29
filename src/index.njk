@@ -7,4 +7,20 @@ layout: base.njk
   <h1>{{ title }}</h1>
   <div class="vibe">You are great!💗</div>
   <script src="/js/index.js"></script>
+  <p><strong>Fake news:</strong></p>
+  <ul>
+  {% for article in news.articles %}
+    <li>{{ article.title }}</li>
+  {% endfor %}
+  </ul>
+
+  <p><strong>Real news:</strong></p>
+  <ul>
+  {% for article in real_news.articles %}
+    <li><a href="{{ article.url}}">{{ article.title }}</a> 
+      (source: <span>{{article.source.name }}</span>)
+      <span>{{article.publishedAt}}</span></li>
+  {% endfor %}
+  </ul>
+<!-- okaemail newsapi.org API key: e65476e541c14d6981f9dee9c652f3a5 -->
 </div>

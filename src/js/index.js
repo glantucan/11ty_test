@@ -14,5 +14,5 @@ setInterval(
     document.querySelector(".vibe").innerHTML = null;
     document.querySelector(".vibe").innerHTML = vibe;
   },
-  500
+  1500
 )
