@@ -1,0 +1,24 @@
+---
+layout: base.njk
+pagination:
+  data: NASAImages
+  size: 1
+  alias: image
+tags: images
+permalink: "/images/{{image.nasaId}}/"
+---
+
+<h1 class="image-page">{{image.title}}</h1>
+<a href="{{image.fullImage}}" target="_blank">
+  <img class="full-img" src="{{image.fullImage}}" />
+</a>
+
+<div class="description">
+  {{image.description}}
+</div>
+<div class="tags">
+  Keywords: 
+  {% for tag in image.tags %}
+      {{tag}}, 
+  {% endfor %}
+</div>

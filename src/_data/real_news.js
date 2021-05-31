@@ -1,14 +1,29 @@
+/* require("dotenv").config();
 var axios = require("axios");
-require("dotenv").config();
+const countries = require('./countries.json');
 
-module.exports = async function getNews() {
+
+
+async function getNews(country) {
   try {
-    const API_KEY = process.env.NEWS_API_KEY
     var response = await axios.get(
-      'https://newsapi.org/v2/top-headlines?country=us&category=science&q=space&apiKey=' + API_KEY
+      `https://newsapi.org/v2/top-headlines?country=${country}&category=technology&q=space&apiKey=${process.env.NEWS_API_KEY}`
     );
-    return response.data;
+    return {
+      "country": country,
+      "articles": response.data.articles
+    };
   } catch (error){
     console.error(error);
   }
-}; 
+}
+
+
+module.exports = async function getLocalizedNews() {
+  var newsPromises = countries.map(getNews);
+  return Promise.all(newsPromises)
+    .then( newsObjs => {
+      //console.log('newsObects:', newsObjs);
+      return [].concat.apply([], newsObjs);
+    });
+};  */

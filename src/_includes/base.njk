@@ -5,6 +5,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
+  <style>
+    body {
+      background-color: #3c354c;
+      font-family: monospace;
+      color: #dde;
+      
+    }
+    a, a:visited{
+      color: lightblue;
+    }
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .image-item {
+      display:flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0.5em;
+
+    }
+    .image-caption {
+      text-align: center;
+    }
+    .thumb {
+      border-radius: 5px;
+      width: 405px;
+      height: 405px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #14151d;
+    }
+    img.thumb-img {
+      max-width: 400px;
+      max-height: 400px;
+    }
+    .full-img {
+      display: block;
+      width:auto;
+      margin: 0 auto;
+      text-align: center;
+      max-width: 100%;
+      max-height: 100vh;
+
+    }
+    h1.image-page {
+      text-align: center;
+    }
+    .description{
+      font-size: 115%;
+      line-height: 1.35;
+      margin: 0.7em auto;
+      width: 65em;
+    }
+  </style>
 </head>
 <body>
   <header>

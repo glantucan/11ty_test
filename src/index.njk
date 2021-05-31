@@ -1,12 +1,12 @@
 ---
 title: An 11ty test page
 layout: base.njk
+
 ---
 
 <div class="container">
   <h1>{{ title }}</h1>
   <div class="vibe">You are great!💗</div>
-  <script src="/js/index.js"></script>
   <p><strong>Fake news:</strong></p>
   <ul>
   {% for article in news.articles %}
@@ -14,13 +14,27 @@ layout: base.njk
   {% endfor %}
   </ul>
 
-  <p><strong>Real news:</strong></p>
+  {# <p><strong>Real news:</strong></p>
   <ul>
-  {% for article in real_news.articles %}
-    <li><a href="{{ article.url}}">{{ article.title }}</a> 
-      (source: <span>{{article.source.name }}</span>)
-      <span>{{article.publishedAt}}</span></li>
+  {% for article in real_news[1].articles %}
+    <li class="article"><a href="{{ article.url}}">{{ article.title }}</a> 
+      <div class="article__details"><span>{{article.source.name }}</span> -- 
+      <span>{{article.publishedAt}}</span><div></li>
   {% endfor %}
-  </ul>
-<!-- okaemail newsapi.org API key: e65476e541c14d6981f9dee9c652f3a5 -->
+  </ul> #}
+  <h2>Saturn Cassini images:</h2>
+  <div class="images">
+    {% for item in NASAImages %}
+      <div class="image-item">
+        <div class="thumb">
+          <a href="/images/{{item.nasaId}}/"><img class="thumb-img" src="{{item.thumb}}"/></a>
+        </div>
+        <div class="image-caption">
+          {{item.title}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script src="/js/index.js"></script>
 </div>
